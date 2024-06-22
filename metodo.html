@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método de Análise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Método de Análise Utilizado</h1>
+            <a href="index.html" class="metodo-link">Voltar ao Dashboard</a>
+        </header>
+
+        <div class="content">
+            <p><strong>Método de Análise: Média Móvel + Desvio Padrão</strong></p>
+
+<p>O método de análise que utilizamos combina a média móvel e o desvio padrão. Aqui está o funcionamento:</p>
+
+<p><strong>1. Coleta de Dados</strong><br>
+Capturamos os dados dos últimos 30 dias de 200 ações. Para cada ação, registramos o valor de fechamento diário.</p>
+
+<p><strong>2. Cálculo da Média Móvel</strong><br>
+Calculamos a média móvel dos valores de fechamento. A fórmula para a média móvel P é:</p>
+
+<img src="1.png" alt="">
+
+<p>Onde:<br>
+- Pi é o valor de fechamento de uma ação no dia i.<br>
+- n é o número de dias (n = 30).</p>
+
+<p>Por exemplo, se os valores de fechamento de uma ação nos últimos 5 dias foram: 10, 12, 11, 13, 12, a média móvel será:</p>
+
+<img src="2.png" alt="">
+
+<p><strong>3. Cálculo do Desvio Padrão</strong><br>
+Comparamos a média móvel com o valor de abertura de cada uma das 200 ações. Calculamos o desvio padrão σ para medir a volatilidade. A fórmula para o desvio padrão é:</p>
+
+<img src="3.png" alt="">
+
+<p>Onde:<br>
+- Pi é o valor de fechamento de uma ação no dia i.<br>
+- P é a média móvel calculada.<br>
+- n é o número de dias (n = 30).</p>
+
+<p>Por exemplo, se os valores de fechamento de uma ação nos últimos 5 dias foram: 10, 12, 11, 13, 12, a média móvel é 11.6 e o desvio padrão será:</p>
+
+<img src="4.png" alt="">
+
+<p><strong>4. Seleção das Ações</strong><br>
+Selecionamos as 5 ações com o maior desvio padrão em relação à média móvel para a carteira de ações. Isso significa que estamos escolhendo as ações com maior volatilidade, que têm maior potencial de ganho (ou perda).</p>
+
+<p><strong>5. Atualização Diária</strong><br>
+O algoritmo faz essa análise todos os dias. As ações presentes hoje na carteira podem permanecer ou ser substituídas por outras com um desvio padrão maior em relação à média móvel. Isso garante que a carteira está sempre composta pelas ações mais voláteis, potencialmente mais lucrativas.</p>
+
+<p><strong>Exemplo Prático</strong></p>
+
+<p><strong>1. Coleta de Dados:</strong><br>
+- Ação A: [10, 12, 11, 13, 12, ...]<br>
+- Ação B: [20, 22, 21, 23, 22, ...]</p>
+
+<p><strong>2. Cálculo da Média Móvel:</strong><br>
+- Ação A: Pa = 11.6<br>
+- Ação B: Pb = 21.6</p>
+
+<p><strong>3. Cálculo do Desvio Padrão:</strong><br>
+- Ação A: σ A ≈ 1.14<br>
+- Ação B: σ B ≈ 1.14</p>
+
+<p><strong>4. Seleção das Ações:</strong><br>
+- Ações com maior desvio padrão entram na carteira.</p>
+
+<p><strong>5. Atualização Diária:</strong><br>
+- Reavaliação das ações com novos dados diários.</p>
+
+<p>Este método permite uma gestão dinâmica e eficiente da carteira de ações, sempre ajustando para maximizar o potencial de ganho com base na volatilidade das ações.</p>
+
+        
+            
+        </div>
+    </div>
+</body>
+</html>

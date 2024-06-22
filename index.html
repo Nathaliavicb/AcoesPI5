@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard da Carteira de Ações</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard da Carteira de Ações</h1>
+            <a href="metodo.html" class="metodo-link">Saiba mais sobre nosso método de análise</a>
+        </header>
+
+        <div class="card">
+            <div class="summary-item">
+                <h2>Período</h2>
+                <p>17/06/2024 - 21/06/2024</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Ações na Carteira Hoje</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ação</th>
+                        <th>Valor Cota (R$)</th>
+                        <th>Valor Investido (R$)</th>
+                        <th>Ganho/Perda (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Santos Brasil Participações S.A.</td>
+                        <td>R$ 13,35</td>
+                        <td>R$ 66,75</td>
+                        <td class="gain">R$ 1,13</td>
+                    </tr>
+                    <tr>
+                        <td>NVIDIA Corporation</td>
+                        <td>R$ 14,52</td>
+                        <td>R$ 72,6</td>
+                        <td class="gain">R$ 0,60</td>
+                    </tr>
+                    <tr>
+                        <td>Apple Inc.</td>
+                        <td>R$ 57,45</td>
+                        <td>R$ 287,25</td>
+                        <td class="gain">R$ 0,40</td>
+                    </tr>
+                    <tr>
+                        <td>Finor -Ci Fund</td>
+                        <td>R$ 1,22</td>
+                        <td>R$ 6,10</td>
+                        <td class="gain">R$ 1,35</td>
+                    </tr>
+                    <tr>
+                        <td>Azevedo & Travassos S.A.</td>
+                        <td>R$ 1,36</td>
+                        <td>R$ 6,80</td>
+                        <td class="loss">R$ -0,10 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="chart">
+            <h2>Desempenho da Carteira</h2>
+            <canvas id="portfolioChart"></canvas>
+        </div>
+
+        <div class="table-section">
+            <h2>Ações Vendidas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ação</th>
+                        <th>Qtd Cotas</th>
+                        <th>Valor de Compra (R$)</th>
+                        <th>Valor de Venda (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Qualicorp Consultoria e Corretora de Seguros S.A.</td>
+                        <td>5</td>
+                        <td>R$ 1,75</td>
+                        <td>R$ 1,55</td>
+                    </tr>
+                    <tr>
+                        <td>Zamp S.A.</td>
+                        <td>5</td>
+                        <td>R$ 3,51</td>
+                        <td>R$ 3,28</td>
+                    </tr>
+                    <tr>
+                        <td>iShares Trust - iShares MSCI USA Momentum Factor ETF</td>
+                        <td>5</td>
+                        <td>R$ 52,58</td>
+                        <td>R$ 53,85</td>
+                    </tr>
+                    <tr>
+                        <td>BRF S.A.</td>
+                        <td>5</td>
+                        <td>R$ 20,14</td>
+                        <td>R$ 20,36</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('portfolioChart').getContext('2d');
+        const portfolioChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['17/06', '18/06', '19/06', '20/06', '21/06'],
+                datasets: [{
+                    label: 'Valor da Carteira (R$)',
+                    data: [363.75, 368.25, 375, 375, 441.75],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
